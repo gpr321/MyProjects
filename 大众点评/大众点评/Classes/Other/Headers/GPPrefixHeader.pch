@@ -1,0 +1,31 @@
+//
+//  GPPrefixHeader.pch
+//  大众点评
+//
+//  Created by mac on 15-2-2.
+//  Copyright (c) 2015年 gpr. All rights reserved.
+//
+
+
+// 使用之前修改项目配置(xcode6.1) ${SRCROOT}/$(PRODUCT_NAME)/文件名.pch
+// 或者 $(PRODUCT_NAME)/$(PRODUCT_NAME).pch
+#ifndef _____GPPrefixHeader_pch
+#define _____GPPrefixHeader_pch
+
+#import "GPConsts.h"
+#import "UIView+Frame.h"
+
+#ifdef DEBUG
+#define MTLog(...) NSLog(__VA_ARGS__)
+#else
+#define MTLog(...)
+#endif
+
+#define GPRGB(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define MTNotficationCenter [NSNotificationCenter defaultCenter]
+
+#define MTHorizonalScreen ([UIScreen mainScreen].bounds.size.width > 768)
+#define MTVerticalScreen ([UIScreen mainScreen].bounds.size.width < 1024)
+
+#endif
